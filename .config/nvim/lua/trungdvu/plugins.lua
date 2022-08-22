@@ -44,4 +44,6 @@ packer.startup(function(use)
 
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+
+  use 'iamcco/markdown-preview.nvim' -- Install markdown-preview manunally
 end)
