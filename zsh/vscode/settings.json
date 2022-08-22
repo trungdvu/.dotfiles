@@ -1,0 +1,91 @@
+{
+  "workbench.list.keyboardNavigation": "simple",
+  "workbench.startupEditor": "none",
+  "window.newWindowDimensions": "inherit",
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.iconTheme": "vscode-icons",
+  "git.autofetch": true,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "debug.disassemblyView.showSourceCode": false,
+  "css.lint.unknownAtRules": "ignore",
+  "css.validate": false,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "extensions.ignoreRecommendations": true,
+  "explorer.compactFolders": false,
+  "vim.hlsearch": true,
+  "vim.timeout": 250,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {
+    "<C-f>": true,
+    "<C-a>": false
+  },
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["v", "n"],
+      "after": ["v", "g", "_", "y"]
+    },
+    {
+      "before": ["d", "n"],
+      "after": ["d", "g", "_"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    }
+  ],
+  // vim mode viwy viwcmd+d p issue hack
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    }
+  ],
+  "git.suggestSmartCommit": false,
+  "eslint.alwaysShowStatus": true,
+  "git.confirmSync": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.bracketPairColorization.enabled": false,
+  "workbench.sideBar.location": "right",
+  "editor.linkedEditing": true,
+  "terminal.external.osxExec": "xTerm.app",
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "turboConsoleLog.insertEnclosingClass": false,
+  "turboConsoleLog.insertEnclosingFunction": false,
+  "breadcrumbs.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "workbench.activityBar.visible": false,
+  "workbench.editor.showTabs": false,
+  "window.title": "${rootName}",
+  "workbench.colorTheme": "Tokyo Night",
+  "window.zoomLevel": 1
+}
