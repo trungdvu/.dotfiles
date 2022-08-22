@@ -2,7 +2,7 @@
 
 ### Neovim required installations
 ```
- brew install neovim tree-sitter ripgrep
+ brew install neovim tree-sitter ripgrep lua-language-server
 ```
 
 ```
