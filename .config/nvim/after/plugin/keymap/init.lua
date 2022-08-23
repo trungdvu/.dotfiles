@@ -43,7 +43,6 @@ nmap("<leader>Y", "\"+Y")
 
 -- greatest remap ever
 xnoremap("<leader>p", "\"_dP")
--- next greatest remap ever : asbjornHaland
 
 vnoremap("<leader>y", "\"+y")
 vnoremap("<leader>d", "\"_d")
