@@ -10,6 +10,9 @@ ts.setup {
     enable = true,
     disable = {},
   },
+  context_commentstring = {
+    enable = true
+  },
   ensure_installed = {
     "tsx",
     "toml",

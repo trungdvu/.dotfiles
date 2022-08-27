@@ -57,7 +57,9 @@ vim.keymap.set('n', ';s', function()
   builtin.grep_string()
 end)
 vim.keymap.set('n', '\\\\', function()
-  builtin.buffers()
+  builtin.buffers({
+    initial_mode = "normal",
+  })
 end)
 vim.keymap.set('n', ';t', function()
   builtin.help_tags()
