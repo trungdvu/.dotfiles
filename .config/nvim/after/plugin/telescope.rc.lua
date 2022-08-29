@@ -16,7 +16,7 @@ telescope.setup {
         ["q"] = actions.close
       },
     },
-    file_ignore_patterns = { "node_modules/", ".git/" }
+    file_ignore_patterns = { "node_modules/", ".git/", ".DS_Store" }
   },
   extensions = {
     file_browser = {
@@ -57,9 +57,7 @@ vim.keymap.set('n', ';s', function()
   builtin.grep_string()
 end)
 vim.keymap.set('n', '\\\\', function()
-  builtin.buffers({
-    initial_mode = "normal",
-  })
+  builtin.buffers()
 end)
 vim.keymap.set('n', ';t', function()
   builtin.help_tags()
