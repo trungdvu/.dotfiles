@@ -11,7 +11,8 @@ ts.setup {
     disable = {},
   },
   context_commentstring = {
-    enable = true
+    enable = true,
+    enable_autocmd = false,
   },
   ensure_installed = {
     "tsx",

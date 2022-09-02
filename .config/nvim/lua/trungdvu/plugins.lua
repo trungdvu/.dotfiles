@@ -25,6 +25,7 @@ packer.startup(function(use)
   use("nvim-treesitter/nvim-treesitter", {
     run = ":TSUpdate"
   })
+  use 'nvim-treesitter/nvim-treesitter-context'
 
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
@@ -48,4 +49,5 @@ packer.startup(function(use)
   use {'iamcco/markdown-preview.nvim'} -- Install markdown preview manunally
 
   use 'terrortylor/nvim-comment'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)
