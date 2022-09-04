@@ -31,11 +31,11 @@ packer.startup(function(use)
   use 'windwp/nvim-ts-autotag'
 
   use("L3MON4D3/LuaSnip")
-
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'akinsho/nvim-bufferline.lua'
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   use 'norcalli/nvim-colorizer.lua'
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client

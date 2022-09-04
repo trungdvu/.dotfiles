@@ -101,6 +101,8 @@ alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias tls="tmux ls"
 alias tns="tmux new -s"
+alias tat="tmux attach -t"
+alias tks="tmux kill-server"
 # alias ohmyzsh="mate ~/.oh-my-zsh"export PATH="/usr/local/opt/node@16/bin:$PATH"
 
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
