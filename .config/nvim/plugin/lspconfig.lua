@@ -18,6 +18,7 @@ local on_attach = function(client, bufnr)
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   nnoremap("gd", function() vim.lsp.buf.definition() end, opts)
+  nnoremap("gi", function() vim.lsp.buf.implementation() end, opts)
   nnoremap("<leader>vd", function() vim.diagnostic.open_float() end, opts)
 end
 
