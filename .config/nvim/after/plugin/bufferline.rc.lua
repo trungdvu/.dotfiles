@@ -9,6 +9,8 @@ bufferline.setup({
     show_close_icon = false,
     color_icons = true
   },
+
+  -- for tokyonight
   highlights = {
     background = {
       fg = '#9aa5ce',

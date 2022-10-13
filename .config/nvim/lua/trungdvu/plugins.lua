@@ -9,6 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use 'folke/tokyonight.nvim'
+  use 'morhetz/gruvbox'
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -27,9 +28,6 @@ packer.startup(function(use)
   })
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
-
   use("L3MON4D3/LuaSnip")
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
@@ -38,7 +36,6 @@ packer.startup(function(use)
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   use 'norcalli/nvim-colorizer.lua'
-  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 
   use 'lewis6991/gitsigns.nvim'
@@ -46,8 +43,11 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
-  use {'iamcco/markdown-preview.nvim'} -- Install markdown preview manunally
+  use { 'iamcco/markdown-preview.nvim' } -- Install markdown preview manunally
 
   use 'terrortylor/nvim-comment'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
 end)
