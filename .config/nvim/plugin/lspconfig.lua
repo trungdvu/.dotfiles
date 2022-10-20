@@ -1,5 +1,6 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
+local util = require 'lspconfig.util'
 
 local protocol = require('vim.lsp.protocol')
 
@@ -29,7 +30,7 @@ local on_attach = function(client, bufnr)
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
@@ -74,9 +75,10 @@ nvim_lsp.flow.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
   cmd = { "typescript-language-server", "--stdio" },
-  capabilities = capabilities
+  capabilities = capabilities,
+  root_dir = util.root_pattern('.git')
 }
 
 nvim_lsp.sourcekit.setup {
