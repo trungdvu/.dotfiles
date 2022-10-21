@@ -13,5 +13,11 @@ Neovim version: 8.0.0
 ```
 
 ```
-  :MasonInstall eslint_d
+  :MasonInstall eslint_d prettier
+```
+
+Ruby required
+
+```
+  gem install solargraph
 ```

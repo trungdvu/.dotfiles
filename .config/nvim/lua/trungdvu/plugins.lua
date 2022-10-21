@@ -7,47 +7,56 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use "wbthomason/packer.nvim"
+  -- Make packer manage itself
+  use 'wbthomason/packer.nvim'
+
+  -- Improve startup time
+  use 'lewis6991/impatient.nvim'
+
+  -- Utils
+  use 'nvim-lua/plenary.nvim'
+
+  -- Tools
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
+  -- Looks
   use 'folke/tokyonight.nvim'
   use 'morhetz/gruvbox'
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use 'norcalli/nvim-colorizer.lua'
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
 
+  -- Navigations
   use 'neovim/nvim-lspconfig'
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
+  use 'onsails/lspkind-nvim'
+  use 'glepnir/lspsaga.nvim'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/nvim-cmp'
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
 
-  use("nvim-treesitter/nvim-treesitter", {
+  -- Treesitter
+  use('nvim-treesitter/nvim-treesitter', {
     run = ":TSUpdate"
   })
   use 'nvim-treesitter/nvim-treesitter-context'
 
+  -- Syntax, code, formatt and highlight
   use("L3MON4D3/LuaSnip")
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
   use 'akinsho/nvim-bufferline.lua'
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
-
-  use 'norcalli/nvim-colorizer.lua'
-  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-
-  use 'lewis6991/gitsigns.nvim'
-
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-
-  use { 'iamcco/markdown-preview.nvim' } -- Install markdown preview manunally
-
-  use 'terrortylor/nvim-comment'
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-
+  use 'jose-elias-alvarez/null-ls.nvim'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+
+  -- Git
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use 'lewis6991/gitsigns.nvim'
+  use 'iamcco/markdown-preview.nvim'
+
+
+  -- Comment
+  use 'terrortylor/nvim-comment'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)

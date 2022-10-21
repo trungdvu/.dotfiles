@@ -21,9 +21,9 @@ end
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
-  --Enable completion triggered by <c-x><c-o>
-  --local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-  --buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- Enable completion triggered by <c-x><c-o>
+  -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
@@ -75,7 +75,14 @@ nvim_lsp.flow.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+  filetypes = {
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx"
+  },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities,
   root_dir = util.root_pattern('.git')
@@ -108,6 +115,19 @@ nvim_lsp.sumneko_lua.setup {
   },
 }
 
+nvim_lsp.solargraph.setup {
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end,
+  settings = {
+    Solargraph = {
+      root_dir = util.root_pattern("Gemfile", ".git", ".")(fname) or vim.fn.getcwd(),
+    },
+  },
+}
+
 nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities
@@ -127,24 +147,17 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
   update_in_insert = false,
-  virtual_text = { spacing = 4, prefix = "●" },
   severity_sort = true,
-}
-)
+})
 
 -- Diagnostic symbols in the sign column (gutter)
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+-- local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+-- for type, icon in pairs(signs) do
+--   local hl = "DiagnosticSign" .. type
+--   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+-- end
 
 vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●'
-  },
   update_in_insert = true,
-  float = {
-    source = "always", -- Or "if_many"
-  },
+  float = { source = "always" },
 })
