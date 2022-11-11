@@ -9,7 +9,7 @@ Neovim version: 8.0.0
 ```
 
 ```
-  npm i -g typescript-language-server
+  npm i -g typescript-language-server vscode-langservers-extracted
 ```
 
 ```
