@@ -49,3 +49,6 @@ vnoremap("<leader>d", "\"_d")
 vnoremap("<leader>d", "\"_d")
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
+
+-- javascript console log
+xnoremap("<leader>l", ":put!=printf('console.log(''%s:'', %s);', expand('<cword>'), expand('<cword>'))<CR>")
