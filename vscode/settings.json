@@ -1,10 +1,10 @@
 {
-  "workbench.list.keyboardNavigation": "simple",
   "workbench.startupEditor": "none",
   "window.newWindowDimensions": "inherit",
   "workbench.editor.untitled.hint": "hidden",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "rose-pine-icons",
   "git.autofetch": true,
+  "breadcrumbs.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
@@ -35,7 +35,7 @@
   ],
   "vim.useCtrlKeys": true,
   "vim.handleKeys": {
-    "<C-f>": true,
+    "<C-f>": false,
     "<C-a>": false
   },
   "vim.leader": "<space>",
@@ -55,12 +55,8 @@
       "commands": [":nohl"]
     },
     {
-      "before": ["J"],
-      "after": ["5", "j"]
-    },
-    {
-      "before": ["K"],
-      "after": ["5", "k"]
+      "before": ["g", "H"],
+      "commands": [{ "command": "editor.action.showDefinitionPreviewHover" }]
     }
   ],
   // vim mode viwy viwcmd+d p issue hack
@@ -76,16 +72,14 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.bracketPairColorization.enabled": false,
   "workbench.sideBar.location": "right",
+  "window.zoomLevel": 1,
   "editor.linkedEditing": true,
   "terminal.external.osxExec": "xTerm.app",
   "turboConsoleLog.includeFileNameAndLineNum": false,
   "turboConsoleLog.insertEnclosingClass": false,
   "turboConsoleLog.insertEnclosingFunction": false,
-  "breadcrumbs.enabled": false,
-  "telemetry.telemetryLevel": "off",
-  "workbench.activityBar.visible": false,
-  "workbench.editor.showTabs": false,
-  "window.title": "${rootName}",
-  "workbench.colorTheme": "Tokyo Night",
-  "window.zoomLevel": 1
+  "turboConsoleLog.delimiterInsideMessage": "var",
+  "turboConsoleLog.logMessagePrefix": "",
+  "workbench.colorTheme": "Rosé Pine",
+  "editor.fontSize": 14
 }

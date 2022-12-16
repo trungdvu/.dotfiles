@@ -21,11 +21,16 @@ packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
 
   -- Looks
-  use 'folke/tokyonight.nvim'
-  use 'morhetz/gruvbox'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use 'norcalli/nvim-colorizer.lua'
 
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+      vim.cmd('colorscheme rose-pine')
+    end
+  })
 
   -- Navigations
   use 'neovim/nvim-lspconfig'
@@ -38,10 +43,8 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
 
   -- Treesitter
-  use('nvim-treesitter/nvim-treesitter', {
-    run = ":TSUpdate"
-  })
-  use 'nvim-treesitter/nvim-treesitter-context'
+  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  use('nvim-treesitter/playground')
 
   -- Syntax, code, formatt and highlight
   use("L3MON4D3/LuaSnip")
