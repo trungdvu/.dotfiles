@@ -6,6 +6,8 @@ local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 local keymap = vim.keymap
 
+vim.g.mapleader = ' '
+
 nnoremap("<leader>pv", ":Ex<CR>")
 nnoremap("<leader>u", ":UndotreeShow<CR>")
 
@@ -33,8 +35,8 @@ inoremap('kj', '<Esc>')
 nnoremap("Y", "yg$")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
-nnoremap("J", "6j")
-nnoremap("K", "6k")
+-- nnoremap("J", "6j")
+-- nnoremap("K", "6k")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<leader>y", "\"+y")
