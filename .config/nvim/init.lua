@@ -1,21 +1,16 @@
-local impatient_loaded, impatient = pcall(require, "impatient")
-if impatient_loaded then
-  impatient.enable_profile()
-end
-
 require("trungdvu.set")
+require("trungdvu.remap")
 require("trungdvu.highlights")
-require("trungdvu.plugins")
+require("trungdvu.packer")
 
-local has = function(x)
-  return vim.fn.has(x) == 1
-end
-local is_macos = has "macunix"
-local is_windows = has "win32"
+local has = vim.fn.has
+local is_mac = has "macunix"
+local is_win = has "win32"
 
-if is_macos then
+if is_mac then
   require("trungdvu.macos")
 end
-if is_windows then
+
+if is_win then
   require("trungdvu.windows")
 end
