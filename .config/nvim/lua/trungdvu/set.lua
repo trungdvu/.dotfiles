@@ -12,6 +12,8 @@ vim.bo.autoread = true
 
 vim.opt.smartindent = true
 
+vim.opt.guicursor = ""
+vim.opt.termguicolors = true
 vim.opt.backup = false
 vim.opt.laststatus = 2
 
