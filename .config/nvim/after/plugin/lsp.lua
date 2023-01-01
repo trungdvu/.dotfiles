@@ -4,10 +4,10 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
-  'eslint',
   'sumneko_lua',
   'rust_analyzer',
-  'tailwindcss'
+  'tailwindcss',
+  'eslint',
 })
 
 local lspkind = require('lspkind')
@@ -34,9 +34,21 @@ lsp.setup_nvim_cmp({
   mapping = cmp_mappings,
   formatting = {
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
-  }
+  },
 })
 
+
+local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
+local enable_format_on_save = function(_, bufnr)
+  vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    group = augroup_format,
+    buffer = bufnr,
+    callback = function()
+      vim.lsp.buf.format({ bufnr = bufnr })
+    end,
+  })
+end
 
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
@@ -51,13 +63,7 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
 
   -- format on save
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.buf.format()
-    end
-  })
+  enable_format_on_save(_, bufnr)
 end)
 
 lsp.configure('sumneko_lua', {
@@ -83,16 +89,7 @@ lsp.configure('tsserver', {
     preferences = {
       jsxAttributeCompletionStylr = 'none'
     }
-  }
+  },
 })
 
 lsp.setup()
-
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  update_in_insert = false,
-  underline = true,
-  severity_sort = false,
-  float = true,
-})

@@ -40,6 +40,7 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
 require('template-string').setup({
   filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'python' },
   jsx_brackets = true,
