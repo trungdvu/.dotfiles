@@ -50,6 +50,15 @@ local enable_format_on_save = function(_, bufnr)
   })
 end
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0), vim.opt.tabstop },
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
@@ -90,6 +99,14 @@ lsp.configure('tsserver', {
       jsxAttributeCompletionStylr = 'none'
     }
   },
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
+  }
 })
 
 lsp.setup()
+
+vim.keymap.set("n", "<leader>o", vim.cmd.OrganizeImports);
