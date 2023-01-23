@@ -33,4 +33,4 @@ vim.keymap.set("n", "dw", 'vb"_d')
 vim.keymap.set("i", "kj", "<Esc>")
 
 -- Javascript console.log
-vim.keymap.set("x", "<leader>l", ":put!=printf('console.log(''%s:'', %s);', expand('<cword>'), expand('<cword>'))<CR>")
+vim.keymap.set("x", "<leader>l", ":put=printf('console.log(''%s:'', %s);', expand('<cword>'), expand('<cword>'))<CR>")

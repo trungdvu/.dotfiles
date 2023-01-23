@@ -11,6 +11,7 @@ telescope.setup {
         ['<C-d>'] = false,
       },
     },
+    file_ignore_patterns = { "node_modules/", ".git/", ".DS_Store" }
   },
   extensions = {
     file_browser = {
