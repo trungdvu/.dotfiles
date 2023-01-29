@@ -5,15 +5,7 @@
 Neovim version: 8.0.0
 
 ```
-  brew install neovim tree-sitter ripgrep lua-language-server reattach-to-user-namespace
-```
-
-```
-  npm i -g typescript-language-server vscode-langservers-extracted
-```
-
-```
-  :MasonInstall eslint_d prettier
+  brew install ripgrep reattach-to-user-namespace
 ```
 
 Ruby required
