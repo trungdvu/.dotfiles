@@ -7,16 +7,12 @@
   "editor.quickSuggestions": { "strings": true },
   "editor.renderControlCharacters": false,
   "editor.tabSize": 2,
-  "editor.bracketPairColorization.enabled": false,
   "editor.linkedEditing": true,
-  "editor.fontSize": 13,
-  "editor.formatOnSave": true,
   "git.autofetch": true,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "terminal.integrated.defaultProfile.osx": "zsh",
   "window.newWindowDimensions": "inherit",
   "workbench.editor.untitled.hint": "hidden",
   "workbench.iconTheme": "vscode-icons",
@@ -44,6 +40,14 @@
     {
       "before": ["d", "n"],
       "after": ["d", "g", "_"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["C-d", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["C-u", "z", "z"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -76,12 +80,14 @@
     {
       "before": ["p"],
       "commands": ["editor.action.clipboardPasteAction"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["turboConsoleLog.displayLogMessage"]
     }
   ],
-  "terminal.external.osxExec": "xTerm.app",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 100,
   "turboConsoleLog.includeFileNameAndLineNum": false,
-  "turboConsoleLog.insertEnclosingClass": false,
-  "turboConsoleLog.insertEnclosingFunction": false,
-  "turboConsoleLog.delimiterInsideMessage": "var",
-  "turboConsoleLog.logMessagePrefix": ""
+  "window.zoomLevel": 1
 }
