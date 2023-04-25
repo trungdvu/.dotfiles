@@ -13,7 +13,7 @@ require('nvim-treesitter.configs').setup {
     'css',
     'html',
     'yaml',
-    'help'
+    'vimdoc'
   },
 
   sync_install = false,
