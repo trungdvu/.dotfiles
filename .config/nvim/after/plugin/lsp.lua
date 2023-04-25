@@ -4,7 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
-  'sumneko_lua',
+  'lua_ls',
   'rust_analyzer',
   'tailwindcss',
   'eslint',
@@ -99,7 +99,7 @@ lsp.on_attach(function(_, bufnr)
   enable_format_on_save(_, bufnr)
 end)
 
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
